@@ -1,7 +1,6 @@
 package br.lucasmurilo.springboot.projetoSpringBoot;
 
 import br.lucasmurilo.springboot.projetoSpringBoot.entities.User;
-import br.lucasmurilo.springboot.projetoSpringBoot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
