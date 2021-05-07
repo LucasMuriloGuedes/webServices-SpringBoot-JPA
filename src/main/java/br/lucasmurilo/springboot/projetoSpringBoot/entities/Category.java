@@ -1,5 +1,7 @@
 package br.lucasmurilo.springboot.projetoSpringBoot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -35,7 +37,8 @@ public class Category implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
     public Set<Product> getProducts() {
         return products;
     }
