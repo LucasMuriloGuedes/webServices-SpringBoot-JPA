@@ -2,6 +2,7 @@ package br.lucasmurilo.springboot.projetoSpringBoot.entities;
 
 import br.lucasmurilo.springboot.projetoSpringBoot.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
