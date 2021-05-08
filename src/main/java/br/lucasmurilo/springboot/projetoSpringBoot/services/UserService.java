@@ -4,6 +4,8 @@ import br.lucasmurilo.springboot.projetoSpringBoot.entities.User;
 import br.lucasmurilo.springboot.projetoSpringBoot.repositories.UserRepository;
 import br.lucasmurilo.springboot.projetoSpringBoot.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,7 +30,13 @@ public class UserService {
     }
 
     public void delete(Long id){
-        repository.deleteById(id);
+        try{
+            repository.deleteById(id);
+        }catch(EmptyResultDataAccessException e){
+            throw new ResourceNotFoundException(id);
+        }catch(DataIntegrityViolationException e){
+        }
+
     }
 
     public User update(Long id, User obj){
