@@ -49,7 +49,6 @@ public class Payment implements Serializable {
     public void setOrder(Order order) {
         this.order = order;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,7 +58,6 @@ public class Payment implements Serializable {
 
         return id != null ? id.equals(payment.id) : payment.id == null;
     }
-
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
